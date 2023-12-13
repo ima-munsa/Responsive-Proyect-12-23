@@ -7,14 +7,17 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+   
 }
 
 body {
     background-color: rgb(255, 255, 255);
     height: 100vh;
     background-image: url(img/fondoAI02.png);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    
 
 }
 
@@ -35,6 +38,7 @@ a:hover {
 header {
     position:relative;
     padding: 0 32px;
+    height: 80px;        /*  REVISION  */ 
 }
 
 .navbar {
@@ -133,10 +137,129 @@ header {
     color:#ffff;
 }
 
+/* MAIN CONTENT */
 
-/* RESPONSIVE HEADER (NAV) */
+.row {
+    display:flex;
+    background-color: rgba(52, 38, 38, 0.34);
+    margin: 0px;
+    border-radius: 10px;
+    overflow:hidden;
+
+
+}
+
+/* Contenido Secundario - Columna izquierda */
+.row .sideleft {
+
+    flex:35%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border:red solid;
+}
+
+/* Contenido principal  */
+.row .main{
+    flex:65%;
+    justify-content: center;
+    text-align: center;
+    border:solid blue;
+}
+
+.row .main section{
+    display: flex;
+    border: solid;
+    justify-content: center;
+}
+
+.row .main article{
+    background-color: rgba(0, 0, 0, 0.388);
+    margin:10px;
+    flex:30%;
+    overflow: hidden;
+}
+
+.row .main article h5 {
+    font-size:10px;
+    height: 40px;
+    color:rgb(199, 225, 225);
+    text-transform: uppercase;
+    padding:5px;
+    overflow: hidden;
+    transition: 0.3s linear;
+
+}
+
+.row .main article img{
+    max-width:100px;
+    max-height:200px;
+    padding:8px 5px; 
+    transition: 0.1s linear;
+}
+
+.row .main article .description{
+    position: relative;
+    font-size:10px;
+    height: 100px;
+    padding:8px 26px;
+    color: rgb(199, 225, 225);
+    align-items: center;
+    transition: 0.3s linear;
+}
+
+
+
+
+.row .main .second .contban {
+    background:none;
+    flex:30%;
+    .banner{
+        align-items: center;
+        scale:2.2;}
+    .eslogan {
+        align-items: center;
+        color:azure;
+        margin-top:15px;
+        font-size: 12px;
+    }
+    
+}
+.row .main article:hover{
+    .description, h5{scale: 1.1;}
+}
+
+.row .main img:hover{
+    transform: scale(1.1);
+    filter: brightness(1.15);
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
 
 @media screen and (max-width: 768px) {
+
+    /* HEADER */
+
+    body{
+        background: url(img/fondoAI02.png);
+        background-size:180em;
+        background-repeat: no-repeat;
+    }
+
+    header{
+        background: url(img/fondoAI02.png);
+        background-size:45em;
+        height:300px;
+    }
+
     .navbar .links, .navbar .action_btn {
         display: none;
     }
@@ -147,9 +270,23 @@ header {
     .dropdown_menu{
         display:block;
     }
-}
+
+    .row {
+        flex-direction:column;
+        background-color: rgba(75, 61, 42, 0.723);
+
+    }
+
+    .main section {
+        flex-direction: column;
+        padding:0 50px;
+    }
+
+
+
 
 @media screen and (max-width:578px) {
+ 
     .dropdown_menu {
         left:32px;
         width:unset;
@@ -157,3 +294,4 @@ header {
 
 
 }
+

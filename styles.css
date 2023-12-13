@@ -1,0 +1,159 @@
+/* GLOBAL */
+
+@import url('https://fonts.googleapis.com/css2?family=Tillana:wght@400;500;700&display=swap');
+
+* {
+    font-family: tillana,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    background-image: url(img/fondoAI02.png);
+    background-size: cover;
+    background-position: center;
+
+}
+
+a {
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+    font-size: 16px;
+}
+
+a:hover {
+    color:rgb(225, 159, 36)
+}
+
+
+
+
+/* HEADER */
+header {
+    position:relative;
+    padding: 0 32px;
+}
+
+.navbar {
+    width: 100%;
+    height:60px;
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 32px;
+    color:black;
+}
+
+.navbar .toggle_btn {
+    color:#ffff;
+    font-size:20px;
+    scale:2;
+    cursor:pointer;
+    display:none;
+}
+
+.action_btn {
+    background-color:rgb(225, 159, 36);
+    color:#ffff;
+    padding: 6px 12px;
+    border:none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+    cursor:pointer;
+    transition: scale 0.2 ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.action_btn:hover {
+    scale:1.1;
+    color:#ffff;
+}
+
+.action_btn:active {
+    transform: scale(0.9);
+}
+
+
+/* DROPDOWN MENU */
+
+.dropdown_menu {
+    display:none; 
+    position:absolute;
+    flex-direction: column;
+    height:0;
+    right:32px;
+    width:280px;
+    top:50px;
+    background-color:rgba(56, 210, 198, 0.35);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    overflow: hidden;  
+    transition: height 0.2 cubic-bezier(0.175, 0.885, 0.32, 1.275) ;    
+}
+
+.dropdown_menu.open {
+    height:280px;
+}
+
+.dropdown_menu .dropdown_link{
+    display:flex;
+    padding:10px;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.dropdown_menu.open .action_btn {
+    display:flex; 
+    scale: 0.9;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.dropdown_menu.open .action_btn:hover {
+    scale:1;
+    color:#ffff;
+}
+
+
+/* RESPONSIVE HEADER (NAV) */
+
+@media screen and (max-width: 768px) {
+    .navbar .links, .navbar .action_btn {
+        display: none;
+    }
+    .navbar .toggle_btn {
+        display: block;
+    }
+ 
+    .dropdown_menu{
+        display:block;
+    }
+}
+
+@media screen and (max-width:578px) {
+    .dropdown_menu {
+        left:32px;
+        width:unset;
+    }
+
+
+}
